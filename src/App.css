@@ -1,0 +1,28 @@
+.header {
+  text-align: center;
+}
+
+.toast {
+  margin: 0 auto;
+}
+
+.navbar {
+	background-image:url('logo-acme-corp.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #36538b !important;
+	background-size: contain;
+	height: 160px;
+}
+
+.mapHolder {
+  background-color: black;
+}
+
+.storeList {
+  background-color:  red;
+}
+
+.container-fluid {
+	margin-top: 25px;
+}
