@@ -26,3 +26,7 @@
 .container-fluid {
 	margin-top: 25px;
 }
+
+.nav-item > a, .form-control, button[type='submit'] {
+	font-size: .9rem;
+}

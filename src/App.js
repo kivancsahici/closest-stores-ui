@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import axios from 'axios';
 
-import Jumbotron from "react-bootstrap/Jumbotron";
 import Toast from "react-bootstrap/Toast";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
@@ -14,28 +13,17 @@ import Button from "react-bootstrap/Button";
 
 import "./App.css";
 
-const ExampleToast = ({ children }) => {
-  const [show, toggleShow] = useState(true);
-
-  return (
-    <Toast show={show} onClose={() => toggleShow(!show)}>
-      <Toast.Header>
-        <strong className="mr-auto">React-Bootstrap</strong>
-      </Toast.Header>
-      <Toast.Body>{children}</Toast.Body>
-    </Toast>
-  );
-};
-
 function Streets(props) {
   return (
     <Form.Group as={Col} controlId="formGridState">
-    <Form.Control as="select">
-    {props.value
-      .map(post =>
-    <option key={post.street} value={post.street}>{post.street}</option>
-    )}
-    </Form.Control>
+      <Form.Control as="select">
+        {
+          props.value.map(
+            post =>
+            <option key={post.street} value={post.street}>{post.street}</option>
+          )
+        }
+      </Form.Control>
     </Form.Group>
   );
 }
