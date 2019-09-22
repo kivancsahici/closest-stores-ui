@@ -54,7 +54,7 @@ class Cities extends React.Component {
 }
 class Main extends React.Component {
   handleClick(e) {
-    axios.get(`http://localhost:8080/geoapi/v1/cities/`+e)
+    axios.get(`http://localhost:8090/geoapi/v1/cities/`+e)
      .then(res => {
        const streets = res.data;
        this.setState({ streets });
@@ -87,10 +87,11 @@ class Main extends React.Component {
   }
   componentDidMount() {
 
-    axios.get(`http://localhost:8080/geoapi/v1/cities`)
+    axios.get(`http://localhost:8090/geoapi/v1/cities`)
       .then(res => {
         const cities = res.data;
-        this.setState({ cities });
+        setTimeout(() => this.setState({ cities }), 1000);
+
       });
   }
 
@@ -125,7 +126,7 @@ class Main extends React.Component {
               </Col>
             </Row>
           </Col>
-          <Col md={12} lg={4} className="mapHolder">lg=4</Col>
+          <Col md={12} lg={4} className="mapHolder">{this.props.children}</Col>
           <Col md={12} lg={3} className="storeList">lg=3</Col>
         </Row>
       </Container>
@@ -137,4 +138,4 @@ const App = () => (
   <Main/>
 );
 
-export default App;
+export default Main;

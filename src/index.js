@@ -1,10 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Main from './App';
+import HomePage from './HomePage';
+import OtherComponent from './OtherComponent';
+
+const Root = () => (
+  <Main>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/other/" component={OtherComponent} />
+      </Switch>
+    </BrowserRouter>
+  </Main>
+);
 
 ReactDOM.render((
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+    <Root />
 ), document.getElementById('root'));
