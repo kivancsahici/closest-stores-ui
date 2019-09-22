@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 import axios from 'axios';
 
-import Toast from "react-bootstrap/Toast";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -10,49 +9,12 @@ import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Cities from './Cities';
+import Streets from './Streets';
 
 import "./App.css";
 
-function Streets(props) {
-  return (
-    <Form.Group as={Col} controlId="formGridState">
-      <Form.Control as="select">
-        {
-          props.value.map(
-            post =>
-            <option key={post.street} value={post.street}>{post.street}</option>
-          )
-        }
-      </Form.Control>
-    </Form.Group>
-  );
-}
-
-class Cities extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  onChange(event) {
-    this.props.onChange(event.target.value);
-  }
-
-  render() {
-    return (
-        <Form.Group as={Col} controlId="formGridState">
-        <Form.Control as="select"
-        onChange={this.onChange.bind(this)}
-        >
-          {this.props.value
-            .map(city =>
-          <option key={city} value={city}>{city}</option>
-          )}
-        </Form.Control>
-        </Form.Group>
-    );
-  }
-
-}
-class Main extends React.Component {
+class App extends React.Component {
   handleClick(e) {
     axios.get(`http://localhost:8090/geoapi/v1/cities/`+e)
      .then(res => {
@@ -134,8 +96,5 @@ class Main extends React.Component {
     );
   }
 }
-const App = () => (
-  <Main/>
-);
 
-export default Main;
+export default App;
