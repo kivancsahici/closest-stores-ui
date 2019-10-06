@@ -1,7 +1,6 @@
 import React from "react";
 
 import axios from 'axios';
-
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -68,10 +67,8 @@ class App extends React.Component {
           <Col md={12} lg={4}>
             <Row>
               <Col md={12} lg={5}>
-                <ul>
-                  <li><Link to="/closestJumbo">Closest Jumbo</Link></li>
-                  <li><Link to="/detailedSearch">Detailed Search</Link></li>
-                </ul>
+              <button type="button" class="btn btn-primary btn-block"><Link to="/closestJumbo">Closest Jumbo</Link></button>
+              <button type="button" class="btn btn-primary btn-block"><Link to="/detailedSearch">Detailed Search</Link></button>
               </Col>
               <Col md={12} lg={7}>
                 <Form>
