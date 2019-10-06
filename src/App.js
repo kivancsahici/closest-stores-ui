@@ -11,6 +11,7 @@ import Cities from './Cities';
 import Streets from './Streets';
 import ClosestJumbo from './ClosestJumbo';
 import DetailedSearch from './DetailedSearch';
+import StoreList from './StoreList';
 import { Link, Switch, Route } from 'react-router-dom';
 
 import "./App.css";
@@ -89,7 +90,9 @@ class App extends React.Component {
               <Route exact path="/detailedSearch/" component={DetailedSearch} />
             </Switch>
           </Col>
-          <Col md={12} lg={3} className="storeList">lg=3</Col>
+          <Col md={12} lg={3} className="storeList">
+            <StoreList/>
+          </Col>
         </Row>
       </Container>
       </div>

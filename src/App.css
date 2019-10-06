@@ -16,11 +16,7 @@
 }
 
 .mapHolder {
-  background-color: black;
-}
-
-.storeList {
-  background-color:  red;
+  background-color: #00000052;
 }
 
 .container-fluid {
@@ -33,4 +29,35 @@
 
 a {
 	color: white;
+}
+
+.storeList {
+	max-height: 476px;
+	overflow-y: auto;
+}
+
+.bg-combo_market {
+    background: url('icon/css_sprites.png') 0px -5px;
+    width: 80px;
+    height: 32px;
+}
+
+.bg-pup_supermarket {
+    width: 32px; height: 32px;
+    background: url('icon/css_sprites.png') -5px -5px;
+}
+
+.bg-supermarket {
+    width: 32px; height: 32px;
+    background: url('icon/css_sprites.png') -47px -5px;
+}
+
+.storeList > .list-group > .list-group-item {
+	padding-top: 0.50rem;
+	padding-bottom: 0.50rem;
+}
+
+.storeList > .list-group > .list-group-item .addressName {
+	font-size: 0.8rem;
+	font-weight: bold;
 }
