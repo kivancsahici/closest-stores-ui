@@ -6,11 +6,13 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Nav from "react-bootstrap/Nav";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Cities from './Cities';
 import Streets from './Streets';
+import ClosestJumbo from './ClosestJumbo';
+import DetailedSearch from './DetailedSearch';
+import { Link, Switch, Route } from 'react-router-dom';
 
 import "./App.css";
 
@@ -66,14 +68,10 @@ class App extends React.Component {
           <Col md={12} lg={4}>
             <Row>
               <Col md={12} lg={5}>
-                <Nav variant="pills" defaultActiveKey="/home" className="flex-column">
-                  <Nav.Item>
-                    <Nav.Link href="/home">Closest Jumbo</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="link-1">Detailed Search</Nav.Link>
-                  </Nav.Item>
-                </Nav>
+                <ul>
+                  <li><Link to="/closestJumbo">Closest Jumbo</Link></li>
+                  <li><Link to="/detailedSearch">Detailed Search</Link></li>
+                </ul>
               </Col>
               <Col md={12} lg={7}>
                 <Form>
@@ -88,7 +86,12 @@ class App extends React.Component {
               </Col>
             </Row>
           </Col>
-          <Col md={12} lg={4} className="mapHolder">{this.props.children}</Col>
+          <Col md={12} lg={4} className="mapHolder">
+            <Switch>
+              <Route exact path="/closestJumbo" component={ClosestJumbo} />
+              <Route exact path="/detailedSearch/" component={DetailedSearch} />
+            </Switch>
+          </Col>
           <Col md={12} lg={3} className="storeList">lg=3</Col>
         </Row>
       </Container>
