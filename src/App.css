@@ -1,3 +1,7 @@
+body {
+	background-color: rgba(72, 72, 72, 0.233);
+}
+
 .header {
   text-align: center;
 }
@@ -13,10 +17,6 @@
 	background-color: #36538b !important;
 	background-size: contain;
 	height: 160px;
-}
-
-.mapHolder {
-  background-color: #00000052;
 }
 
 .container-fluid {
