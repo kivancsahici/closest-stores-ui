@@ -2,23 +2,16 @@ import React from 'react';
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import {connect} from 'react-redux';
 
-const stores = [
-  {
-    addressName: 'Jumbo Eindhoven Boschdijk',
-    locationType: 'PuP'
-  },
-  {
-    addressName: 'Jumbo Eindhoven Geldropseweg',
-    locationType: 'PuP'
-  },
-  {
-    addressName: 'Jumbo Eindhoven Kastelenplein',
-    locationType: 'PuP'
-  }
-];
+function mapStateToProps(state) {
+  return {
+    stores: state.stores
+  };
+}
 
-function StoreList() {
+
+const StoreList = connect(mapStateToProps, () => ({}))(function ({stores}) {
   return (
     <div className="storeList">
       <ListGroup as="ul">
@@ -38,6 +31,6 @@ function StoreList() {
       </ListGroup>
     </div>
   )
-}
+})
 
 export default StoreList;

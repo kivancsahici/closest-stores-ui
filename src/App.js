@@ -68,8 +68,8 @@ class App extends React.Component {
           <Col md={12} lg={4}>
             <Row>
               <Col md={12} lg={5}>
-              <button type="button" class="btn btn-primary btn-block"><Link to="/closestJumbo">Closest Jumbo</Link></button>
-              <button type="button" class="btn btn-primary btn-block"><Link to="/detailedSearch">Detailed Search</Link></button>
+              <Button variant="primary" block><Link to="/closestJumbo">Closest Jumbo</Link></Button>
+              <Button variant="primary" block><Link to="/detailedSearch">Detailed Search</Link></Button>
               </Col>
               <Col md={12} lg={7}>
                 <Form>
