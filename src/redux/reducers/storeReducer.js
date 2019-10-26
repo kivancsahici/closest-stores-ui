@@ -1,12 +1,7 @@
 import * as types from "../actions/actionTypes";
 import initialState from "./initialState";
 
-export default function storeReducer(
-  state = {
-    stores: initialState.stores
-  },
-  action
-) {
+export default function storeReducer(state = initialState.stores, action) {
   switch (action.type) {
     case types.FIND_STORES:
       return state;

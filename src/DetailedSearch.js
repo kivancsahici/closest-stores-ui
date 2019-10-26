@@ -3,6 +3,7 @@ import Cities from "./Cities";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
+import Streets from "./Streets";
 import { connect } from "react-redux";
 import * as storeActions from "./redux/actions/storeActions";
 
@@ -13,7 +14,8 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  loadCities: storeActions.loadCities
+  loadCities: storeActions.loadCities,
+  loadStores: storeActions.loadStores
 };
 
 const DetailedSearch = connect(
@@ -21,6 +23,7 @@ const DetailedSearch = connect(
   mapDispatchToProps
 )(function({
   loadCities,
+  loadStores,
   cities,
   ...props /* assign any props I havent destructured on the left to a variable called props */
 }) {
@@ -30,10 +33,15 @@ const DetailedSearch = connect(
     });
   }, []); //runs only once during initial load
 
+  function onSave(event) {
+    event.preventDefault();
+    loadStores();
+  }
   return (
     <div className="DetailedSearch">
-      <Form>
+      <Form onSubmit={onSave}>
         <Cities />
+        <Streets />
         <Form.Group as={Col}>
           <Button variant="primary" type="submit">
             Search

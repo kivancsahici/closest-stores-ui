@@ -1,7 +1,6 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import Streets from "./Streets";
 import { connect } from "react-redux";
 import * as storeActions from "./redux/actions/storeActions";
 
@@ -26,23 +25,20 @@ const Cities = connect(
   ...props /* assign any props I havent destructured on the left to a variable called props */
 }) {
   return (
-    <>
-      <Form.Group as={Col} controlId="formGridState">
-        <Form.Control
-          as="select"
-          onChange={e => loadStreets(e.target.value)}
-          defaultValue={"selectOption"}
-        >
-          <option value="selectOption">Select a city</option>
-          {cities.map(city => (
-            <option key={city} value={city}>
-              {city}
-            </option>
-          ))}
-        </Form.Control>
-      </Form.Group>
-      <Streets />
-    </>
+    <Form.Group as={Col} controlId="formGridState">
+      <Form.Control
+        as="select"
+        onChange={e => loadStreets(e.target.value)}
+        defaultValue={"selectOption"}
+      >
+        <option value="selectOption">Select a city</option>
+        {cities.map(city => (
+          <option key={city} value={city}>
+            {city}
+          </option>
+        ))}
+      </Form.Control>
+    </Form.Group>
   );
 });
 
