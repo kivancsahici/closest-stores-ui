@@ -2,7 +2,9 @@ import * as types from "../actions/actionTypes";
 import initialState from "./initialState";
 
 export default function storeReducer(
-  state = { stores: initialState.stores, highlight: "" },
+  state = {
+    stores: initialState.stores
+  },
   action
 ) {
   switch (action.type) {

@@ -1,3 +1,5 @@
 export default {
-  stores: []
+  stores: [],
+  cities: [],
+  streets: []
 };
