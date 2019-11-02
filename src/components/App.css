@@ -1,0 +1,67 @@
+body {
+  background-color: rgba(72, 72, 72, 0.233);
+}
+
+.header {
+  text-align: center;
+}
+
+.toast {
+  margin: 0 auto;
+}
+
+.navbar {
+  background-image: url("logo-acme-corp.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #36538b !important;
+  background-size: contain;
+  height: 160px;
+}
+
+.container-fluid {
+  margin-top: 25px;
+}
+
+.nav-item > a,
+.form-control,
+button[type="submit"] {
+  font-size: 0.9rem;
+}
+
+a {
+  color: white;
+}
+
+.storeList {
+  max-height: 476px;
+  overflow-y: auto;
+}
+
+.bg-combo_market {
+  background: url("../icon/css_sprites.png") 0px -5px;
+  width: 80px;
+  height: 32px;
+}
+
+.bg-pup_supermarket {
+  width: 32px;
+  height: 32px;
+  background: url("../icon/css_sprites.png") -5px -5px;
+}
+
+.bg-supermarket {
+  width: 32px;
+  height: 32px;
+  background: url("../icon/css_sprites.png") -47px -5px;
+}
+
+.storeList > .list-group > .list-group-item {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.storeList > .list-group > .list-group-item .addressName {
+  font-size: 0.8rem;
+  font-weight: bold;
+}

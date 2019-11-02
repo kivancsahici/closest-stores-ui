@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Streets from "./Streets";
 import { connect } from "react-redux";
-import * as storeActions from "./redux/actions/storeActions";
+import * as storeActions from "../redux/actions/storeActions";
 
 function mapStateToProps(state) {
   return {
