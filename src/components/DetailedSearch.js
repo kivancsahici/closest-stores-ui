@@ -28,9 +28,11 @@ const DetailedSearch = connect(
   ...props /* assign any props I havent destructured on the left to a variable called props */
 }) {
   useEffect(() => {
+    /*
     loadCities().catch(error => {
       alert("Loading cities failed" + error);
-    });
+    });*/
+    loadCities();
   }, []); //runs only once during initial load
 
   function onSave(event) {
