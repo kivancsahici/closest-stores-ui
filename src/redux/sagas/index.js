@@ -1,9 +1,17 @@
 import { put, takeLatest, all } from "redux-saga/effects";
 
 function* loadCities() {
+  yield put({
+    type: "LOAD_CITIES_BEGIN"
+  });
+
   const cities = yield fetch("http://localhost:3001/acmeCities").then(
     response => response.json()
   );
+
+  yield put({
+    type: "LOAD_CITIES_END"
+  });
 
   yield put({
     type: "LOAD_CITIES_SUCCESS",

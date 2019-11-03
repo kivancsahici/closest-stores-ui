@@ -1,5 +1,6 @@
 export default {
   stores: [],
   cities: [],
-  streets: []
+  streets: [],
+  apiCallActive: false
 };

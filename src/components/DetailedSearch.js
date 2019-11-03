@@ -4,12 +4,14 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Streets from "./Streets";
+import Spinner from "./common/Spinner";
 import { connect } from "react-redux";
 import * as storeActions from "../redux/actions/storeActions";
 
 function mapStateToProps(state) {
   return {
-    cities: state.cities
+    cities: state.cities,
+    apiCallActive: state.apiCallActive
   };
 }
 
@@ -22,6 +24,7 @@ const DetailedSearch = connect(
   mapStateToProps,
   mapDispatchToProps
 )(function({
+  apiCallActive,
   loadCities,
   loadStores,
   cities,
@@ -39,18 +42,25 @@ const DetailedSearch = connect(
     event.preventDefault();
     loadStores();
   }
+
   return (
-    <div className="DetailedSearch">
-      <Form onSubmit={onSave}>
-        <Cities />
-        <Streets />
-        <Form.Group as={Col}>
-          <Button variant="primary" type="submit">
-            Search
-          </Button>
-        </Form.Group>
-      </Form>
-    </div>
+    <>
+      {apiCallActive ? (
+        <Spinner />
+      ) : (
+        <div className="DetailedSearch">
+          <Form onSubmit={onSave}>
+            <Cities />
+            <Streets />
+            <Form.Group as={Col}>
+              <Button variant="primary" type="submit">
+                Search
+              </Button>
+            </Form.Group>
+          </Form>
+        </div>
+      )}
+    </>
   );
 });
 
