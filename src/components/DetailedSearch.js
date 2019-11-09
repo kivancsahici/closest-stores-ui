@@ -35,7 +35,7 @@ const DetailedSearch = connect(
     loadCities().catch(error => {
       alert("Loading cities failed" + error);
     });*/
-    loadCities();
+    if (cities.length === 0) loadCities();
   }, []); //runs only once during initial load
 
   function onSave(event) {
