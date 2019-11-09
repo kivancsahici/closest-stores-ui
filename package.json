@@ -19,7 +19,7 @@
   "scripts": {
     "start": "run-p start:api start:dev",
     "start:dev": "react-scripts start",
-    "start:devs": "webpack-dev-server --config webpack.config.dev.js --port 3000",
+    "start:devs": "webpack-dev-server --config webpack.config.dev.js --port process.env.PORT || 3000",
     "prestart:api": "node tools/createMockDb.js",
     "start:api": "node tools/apiServer.js"
   },
