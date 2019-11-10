@@ -5,9 +5,9 @@ function* loadCities() {
     type: "LOAD_CITIES_BEGIN"
   });
 
-  const cities = yield fetch("http://localhost:3001/acmeCities").then(
-    response => response.json()
-  );
+  const cities = yield fetch(
+    "https://closest-stores.herokuapp.com/geoapi/v1/cities"
+  ).then(response => response.json());
 
   yield put({
     type: "LOAD_CITIES_END"
@@ -21,7 +21,7 @@ function* loadCities() {
 
 function* loadStreets(action) {
   const streets = yield fetch(
-    "http://localhost:3001/acmeStores?city=" + action.city
+    "https://closest-stores.herokuapp.com/geoapi/v1/cities/" + action.city
   ).then(response => response.json());
 
   yield put({
